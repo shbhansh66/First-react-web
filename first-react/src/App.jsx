@@ -1,18 +1,18 @@
 import React from 'react'
+import Card from './components/card.jsx'
 
 const App = () => {
   return (
-<>
-<div>
-  <h1>Hi This is my first app</h1>
-</div>
-
-<div>
-  <h1>
-    First
-  </h1>
-</div>
-</>
+    <>
+      <div>
+        <Card/>
+      </div>
+      <div>
+        <h1>
+          First
+        </h1>
+      </div>
+    </>
   )
 }
 

@@ -3,9 +3,33 @@ import React from 'react'
 const card = (props) => {
   return (
     <div className='cards'>
-      <img src="../assests/react.svg" alt="" />
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis magni, inventore aliquid reprehenderit molestiae qui consequuntur corrupti eaque blanditiis minus eligendi, delectus sint architecto pariatur et exercitationem quas beatae?</h1>
-      <p>Web Developer</p>
+         <div>
+            <h1>{props.status}</h1>
+            <p>{props.rate}</p>
+         </div>
+
+         <div className='centre'>
+            <img src={props.img} alt="image" />
+            <h1>{props.name}</h1>
+            <p>{props.role}</p>
+            <p><span></span>{props.company}</p>
+            <div>
+                <ul>
+                    <li>{props.skill[0]}</li>
+                     <li>{props.skill[1]}</li>
+                      <li>{props.skill[2]}</li>
+                      <li className='p'>{props.skill[3]}</li>
+
+                </ul>
+            </div>
+
+            <p className='description'>{props.desc}</p>
+         </div>
+
+         <div>
+            <p>VIEW PROFILE</p>
+         </div>
+        
     </div>
   )
 }

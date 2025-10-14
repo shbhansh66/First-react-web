@@ -22,13 +22,215 @@ a:hover {
   color: #535bf2;
 }
 
-.cards{
-  background-color: rgb(207, 84, 84);
-  border: 2px solid red;
-  box-shadow: #213547;
-  border-radius: 20px;
-  padding: 1rem;
+
+
+/* Card.css - simple, responsive card layout */
+
+/* Base/reset for the card */
+
+
+.parent{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
 }
+
+.cards {
+ 
+  width: 40%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(12, 28, 44, 0.08);
+  border: 1px solid rgba(12, 28, 44, 0.04);
+  max-width: 450px;
+  margin: 18px auto;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Left column (availability + price) */
+.cards > div:first-child {
+  display: flex;
+  flex-direction: row;
+ gap: 7rem;
+  text-align: left;
+  padding: 8px 4px;
+  
+ 
+}
+
+.cards > div:first-child h1 {
+  font-size: 14px;
+  color: #16a34a; /* green for available */
+  margin: 0;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+}
+
+.cards > div:first-child p {
+  margin: 0;
+  font-size: 13px;
+  color: #0f172a;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+/* Center column (profile) */
+.cards .centre {
+ 
+  padding: 10px;
+ 
+  text-align: center;
+ 
+}
+
+.cards .centre img {
+  width: 5rem;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* flex-shrink: 0; */
+  border: 2px solid rgba(15,23,42,0.06);
+  background: #f3f4f6;
+}
+
+.cards .centre > div, /* if you wrap text in a div */
+.cards .centre h1,
+.cards .centre p {
+ 
+ display: flex;
+ justify-content: center;
+  margin: 0;
+}
+
+/* Name + role */
+.cards .centre h1 {
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.cards .centre p {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+/* Company line with small badge */
+.cards .centre p span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #06b6d4; /* small indicator */
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Skill list */
+.cards .centre ul {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.cards .centre ul li {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cards .centre ul li.plus{
+  background-color: blue;
+  color: white;
+}
+
+/* Description */
+.cards .centre p.description {
+  color: #646e7c;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+/* Right column (action) */
+.cards > div:last-child {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+.cards > div:last-child p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0f172a;
+  padding: 5px 14px;
+ 
+  cursor: pointer;
+  transition: all 160ms ease;
+  user-select: none;
+}
+
+.cards > div:last-child p:hover {
+  background: #0de939;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15,23,42,0.06);
+}
+
+/* Small screens: stack vertically */
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .cards .centre {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .cards > div:first-child,
+  .cards > div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards .centre img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .cards .centre h1 { font-size: 16px; }
+}
+
+/* Accessibility: focus state for clickable element */
+.cards > div:last-child p:focus {
+  outline: 3px solid rgba(59,130,246,0.15);
+  outline-offset: 3px;
+}
+
 
 body {
   margin: 0;

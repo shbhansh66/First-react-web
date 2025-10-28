@@ -8,12 +8,14 @@ import Product from './pages/Product'
 import Not_found from './pages/Not-found'
 import Men from './pages/men'
 import Women from './pages/women'
+import Navbar2 from './components/Navbar2'
 
 
 const App = () => {
   return (
     <div className='flex flex-col'>
     <Navbar/>
+    <Navbar2/>
       <Routes>
     <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>} />

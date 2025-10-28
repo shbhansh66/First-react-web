@@ -3,7 +3,7 @@ import About from './pages/About'
 import Navbar from './components/Navbar'
 import { Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
+import Course from './pages/Course'
 import Product from './pages/Product'
 import Not_found from './pages/Not-found'
 import Men from './pages/men'
@@ -17,12 +17,14 @@ const App = () => {
       <Routes>
     <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>} />
-      <Route path='/contact' element={<Contact/>}/> 
-      <Route path='/product'element={<Product/>} /> 
+      <Route path='/course' element={<Course/>}/> 
+       <Route path='/course/:courseId' element={<Course/>}/>
+      <Route path='/product'element={<Product/>}>
+      <Route path='men' element={<Men/>}/>
+    <Route path='women' element={<Women/>}/>
+      </Route> 
+
       <Route path='*' element={<Not_found/>}/>
-      <Route path='/product/men' element={<Men/>}/>
-      
-    <Route path='/product/women' element={<Women/>}/>
 
       </Routes>
     </div>
